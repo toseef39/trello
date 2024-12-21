@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <title>Trello</title>
+  </head>
+  <body>
+      <header>
+        <i id="bn" class="fa-solid fa-compact-disc"  style="color: rgb(206, 209, 211);"></i>
+        <img
+          class="logo" src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Trello-logo-blue.svg"
+          alt="Trello Logo"
+        />
+      <div class="head">
+        <nav>
+          <select name="Workspace" id="same"> <option value="Workspace">Workspace</option></select>
+          <select name="Workspace" id="same"> <option value="Workspace">Recent</option></select>
+          <select name="Workspace" id="same"> <option value="Workspace">starred</option></select>
+          <select name="Workspace" id="same"> <option value="Workspace">More</option></select>
+        </div>
+ <div class="right">
+    <button class="btn"><i   class="fa-solid fa-wand-sparkles"></i>13 days left</button>
+    <input class="searchbar" type="search" placeholder="Search"> 
+  </div>
+  <div class="icons">
+    <i class="fa-solid fa-bell"  style="color: aliceblue;"></i>
+    <i class="fa-regular fa-circle-question" style="color: aliceblue;"></i>
+    <button class="tn">Sign up</button>
+  </div>
+</nav>
+    </header>
+    <main>
+    <!-- <div class="T">T</div> -->
+
+    <div class="firstsec"> 
+      <h4>Trello Workspace</h4>
+      <h6>Premiumc</h6>
+    </div>
+      <section class="leftsection">
+          <!-- <hr style="color: aliceblue;"> -->
+        <div id="onesec"> 
+            <h3><a href="">My Trello Board</a></h3>
+              <i id="str" class="fa-regular fa-star"></i>
+            <button><i class="fa-regular fa-eye"></i>Workspace</button>
+           <select name="" id="opt"><option>Board</option></select>
+      </div>
+        <div class="oneofsec">
+          <button><i class="fa-solid fa-filter"></i>Filter</button> 
+          <button><i class="fa-solid fa-share"></i>Share</button>
+          <i id="dots" class="fa-solid fa-ellipsis"></i>
+      </div>
+  </section>
+  <!-- <hr> -->
+  <section class="secondsection">
+    <div class="firstPortion">
+      <h4>Boards</h4>
+      <h4>Members <i class="fa-solid fa-plus"></i></h4>
+      <select id="set"><option> <i class="fa-solid fa-gear"></i>Workspace Settings</option></select>
+    </div>
+    <div class="secondPortion">Premium</div>
+    <div class="thirdPortion">
+      <h3>Workspace View</h3>
+      <h5>Table</h5>
+      <h5>Clendar</h5>
+    </div>
+</section>
+<section class="thirdsection">
+  <div class="divOne">
+    <h3>To Do List</h3>
+    <input class="zero" type="text">
+    <div id="add"> </div>
+    <button  onclick="addButton(), increseHeight()"  id="addbtn" ><i class="fa-solid fa-plus"></i>Add a card</button><i class="fa-solid fa-calendar-plus"></i>
+  </div>
+  <div class="divtwo">
+    Doing
+    <input class="one" type="text">
+    <div id="add1"> </div>
+    <button onclick="newButton(), bharHeight()" id="addbtn"><i class="fa-solid fa-plus"></i>Add a card</button><i id="create" class="fa-solid fa-calendar-plus"></i>
+
+</div>
+  <div class="divthree">
+    <p>Done</p>
+    <input class="two" type="text">
+    <div id="add2"> </div>
+    <button onclick="nayaButton(), baraghar()" id="addbtn"><i class="fa-solid fa-plus"></i>Add a card</button><i class="fa-solid fa-calendar-plus"></i>
+</div>
+</section>
+</main>
+<script>
+  
+let box = document.getElementsByClassName("zero");
+let empty = document.getElementById("add");
+
+
+addButton=()=>{
+  let newElement = document.createElement("input");
+       newElement.setAttribute("type","text")
+       newElement.className ="zero"
+  // let list = document.createElement("li");
+      newElement.innerHTML = box.value;
+    // newElement.appendChild(list);
+     empty.appendChild(newElement);
+}
+let box1 = document.getElementsByClassName("one");
+let empty1 = document.getElementById("add1");
+newButton=()=>{
+  let newElement = document.createElement("input");
+       newElement.setAttribute("type","text")
+       newElement.className ="one"
+  // let list = document.createElement("li");
+      newElement.innerHTML = box1.value;
+    // newElement.appendChild(list);
+     empty1.appendChild(newElement);
+  
+}
+let box2 = document.getElementsByClassName("two");
+let empty2 = document.getElementById("add2");
+nayaButton=()=>{
+  let new2Element = document.createElement("input");
+       new2Element.setAttribute("type","text")
+       new2Element.className ="two"
+  // let list = document.createElement("li");
+      new2Element.innerHTML = box2.value;
+    // newElement.appendChild(list);
+     empty2.appendChild(new2Element);
+     
+}
+let click=0;
+let incre = document.getElementsByClassName("divOne")[0];
+increseHeight=()=>{
+  click++;
+  const newHeight = 15+ click * 10;
+if(click==0){
+  incre.innerHTML=""
+}else {
+  incre.style.height = newHeight +"vh"
+}
+}
+let click1=0;
+let incre1 = document.getElementsByClassName("divtwo")[0];
+bharHeight=()=>{
+  click1++;
+  const newHeight = 15+ click * 10;
+if(click1==0){
+  incre.innerHTML=""
+}else {
+  incre1.style.height = newHeight +"vh"
+}
+}
+let click2=0;
+let incre2 = document.getElementsByClassName("divthree")[0];
+baraghar=()=>{
+  click2++;
+  const newHeight = 15+ click * 10;
+if(click2==0){
+  incre2.innerHTML=""
+}else {
+  incre2.style.height = newHeight +"vh"
+}
+}
+
+
+
+</script>
+</body>
+</html>
